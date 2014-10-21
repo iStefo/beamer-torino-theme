@@ -2,9 +2,9 @@ TORINO, A PRETTY THEME FOR LATEX-BEAMER
 =======================================
 
 ## Authors
-Marco Barisione <marco@barisione.org>
-Bozhidar Batsov
-Stefan Fochler
+* Marco Barisione <marco@barisione.org>
+* Bozhidar Batsov
+* Stefan Fochler
 
 ## Abstract
 Beamer (http://latex-beamer.sourceforge.net/) is a LaTeX class that
@@ -39,9 +39,21 @@ $ pdflatex freewilly.tex
 ```
 
 ### Additional Features
+#### Color Schemas
+Torino comes with 4 color schemas:
+
+* **chameleon**: Default, bright greenish
+* **nouvelle**: Like chameleon, but with red elements mixed in
+* **freewilly**: Blue and purple
+* **istefo**: Blue theme that is similar to the colors of the [Technical University
+of Munich](http://www.tum.de/)
+
+Custom color themes can be enabled via `\usecolortheme{nouvelle}`.
+
 #### Navigation
 You can enable a simple navigation bar with the `navigation=true` flag (just
 like `titleline=true` or `alternativetitlepage=true`). Navigation can be turned
-off by `\navigationoff` and back on again with `\navigationon`. This is usefull
-for e.g. the title page. Note, that this only works when navigation is enabled
-via `navigation=true` in the `\usetheme` command!
+off by `\navigationoff` and back on again with `\navigationon`.
+
+This is usefull for e.g. the title page. Note, that this only works when
+navigation is initially enabled via `navigation=true` in the `\usetheme` command!
