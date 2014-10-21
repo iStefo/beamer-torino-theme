@@ -26,6 +26,10 @@
 \def\beamer@decolines@watermarkheightmult{1}
 \DeclareOptionBeamer{watermarkheightmult}{\def\beamer@decolines@watermarkheightmult{#1}}
 
+% Navigation status.
+\def\beamer@decolines@navigationorig{}
+\DeclareOptionBeamer{navigation}{\def\beamer@decolines@navigationorig{#1}}
+
 \ExecuteOptionsBeamer{titleline=false}
 \ProcessOptionsBeamer
 
@@ -37,6 +41,15 @@
 
 % Initially enable the watermark.
 \watermarkon
+
+% Enable/disable the navigation.
+\def\navigationon{%
+  \def\beamer@decolines@navigation{\beamer@decolines@navigationorig}
+}
+\def\navigationoff{\def\beamer@decolines@navigation{}}
+
+% Initially enable the navigation.
+\navigationon
 
 % Colors.
 \setbeamercolor*{lineup}{parent=palette primary}
@@ -114,6 +127,11 @@
   \leavevmode%
   \hbox{%
   \begin{beamercolorbox}[wd=\paperwidth,ht=\headerheight,dp=0pt]{page header}%
+  % conditional display of navigation
+  \if\beamer@decolines@navigation\@empty\else%
+    \insertsectionnavigationhorizontal{.5\textwidth}{}{}\insertsubsectionnavigationhorizontal{.5\textwidth}{}{}
+    \vspace{0.05cm}
+  \fi
   \end{beamercolorbox}%
   } %
   \vskip0pt%
